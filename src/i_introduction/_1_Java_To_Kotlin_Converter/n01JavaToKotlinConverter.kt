@@ -1,6 +1,7 @@
 package i_introduction._1_Java_To_Kotlin_Converter
 
 import util.TODO
+import java.lang.StringBuilder
 
 fun todoTask1(collection: Collection<Int>): Nothing = TODO(
     """
@@ -14,5 +15,13 @@ fun todoTask1(collection: Collection<Int>): Nothing = TODO(
 
 
 fun task1(collection: Collection<Int>): String {
-    todoTask1(collection)
+    var sb = StringBuilder()
+    sb.append("{")
+    var iterator = collection.iterator()
+    while(iterator.hasNext()){
+        sb.append(iterator.next())
+        if(iterator.hasNext()) sb.append(", ")
+    }
+    sb.append("}")
+    return sb.toString()
 }
